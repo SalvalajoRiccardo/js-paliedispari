@@ -16,9 +16,9 @@ if(parola == parolaInversa){
 // Funzioni
 function inverti(x) {
     var inv ='';
-    for (var i = parola.length - 1; i >= 0; i--) {
-        x = parola[i]
-        inv += x;
+    for (var i = x.length - 1; i >= 0; i--) {
+        var y = x[i]
+        inv += y;
     }
     return inv;
 }
