@@ -22,3 +22,6 @@ function inverti(x) {
     }
     return inv;
 }
+
+
+
