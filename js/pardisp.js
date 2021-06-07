@@ -5,10 +5,10 @@
 
 var parDis = prompt('scegli se pari o dispari').toLocaleLowerCase();
 if (parDis != 'pari' && parDis != 'dispari') {
-    alert('devi inserire pari o dispari, riprova')
+    alert('devi inserire pari o dispari, riprova');
 }
 
-var numUtente = parseInt(prompt("inserisci un numero da 1 a 5"))
+var numUtente = parseInt(prompt("inserisci un numero da 1 a 5"));
 
 if (isNaN(numUtente)) {
     alert('devi inserire un numero da 1 a 5, riprova')
@@ -16,20 +16,31 @@ if (isNaN(numUtente)) {
     alert('devi inserire un numero da 1 a 5, riprova')
 } 
 
+var numPC =  Math.floor(RandomPC(1,5));
 
-var numPC =  RandomPC(1,5)
+var somma = numPC + numUtente;
 
+var risultato = pariDispari(somma);
 
-
-
-
-
-
-
-
+if (risultato == parDis) {
+    document.getElementById('pd').innerHTML ='hai vinto';
+} else {
+    document.getElementById('pd').innerHTML ='hai perso';
+}
 
 
 // funzioni
 function RandomPC(min, max) {
     return Math.random() * (max - min) + min;
+}
+
+
+var ris = 0
+function pariDispari(y) {
+    if (y % 2 == 0) {
+        ris = 'pari'
+    } else {
+        ris = 'dispari'
+    }
+    return ris
 }
